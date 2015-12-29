@@ -15,7 +15,6 @@ class FindDir {
     children.toIterator ++ children.toIterator.flatMap(subDir _)
   }
 
-  //implicit 自动转型
   implicit def makeFileVisitor(f:(Path)=>Unit)=new SimpleFileVisitor[Path]{
     override def visitFile(p: Path, attrs: BasicFileAttributes): FileVisitResult = {
       f(p)

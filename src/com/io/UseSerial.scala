@@ -11,7 +11,6 @@ import scala.collection.mutable.ArrayBuffer
  */
 object UseSerial {
 
-  //集合类都是可序列化的
   private val friends=new ArrayBuffer[Person]()
 
   def main(args: Array[String]) {
