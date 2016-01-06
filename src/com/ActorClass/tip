@@ -1,0 +1,10 @@
+Actor通信
+
+1 创建全局Actor
+2 构造带有指向一个或多个Actor的引用
+3 Actor接收一个带有指向另一个Actor的引用
+actor ! Compute(data,continuation)
+continuation是另一个Actor引用
+
+4 Actor可以返回消息给发送方
+
