@@ -1,5 +1,3 @@
-package ClassExtend
-
 /*
                    _ooOoo_
                   o8888888o
@@ -21,25 +19,17 @@ package ClassExtend
                    `=---='
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
          佛祖保佑       永无BUG
-         Create by Caesar,2016/1/14
+         Create by Caesar,2016/1/23
 */
-class OverrideField {
-  val val1="val1"
-  var var1="var1"
-  def functionNoParm={}
-  def functionParm(name:String)={}
-}
+package object PackageImport {
+  //包可以包含类，对象，特质但不能包含函数或变量的定义
 
-class MyOverrideField extends OverrideField{
-  //def 只能重写另一个def
-  override def functionParm(name:String)={
-    printf("重写")
+
+  //包对象的变量，在这个包内可以直接引用，其他地方用包路径引用
+  var val1:String="aaa"
+
+  class hh{
+    //直接用
+    println(val1)
   }
-  //val重写另一个val或不带参数的def
-  //override val val1="new val1"
-  //override val functionNoParm=""
-
-  //var重写var
-  //override var var1="bbb"
-
 }

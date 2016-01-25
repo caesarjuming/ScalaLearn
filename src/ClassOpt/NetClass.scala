@@ -1,4 +1,4 @@
-package ClassExtend
+package ClassOpt
 
 /*
                    _ooOoo_
@@ -21,40 +21,48 @@ package ClassExtend
                    `=---='
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
          佛祖保佑       永无BUG
-         Create by Caesar,2016/1/14
+         Create by Caesar,2016/1/10
 */
-class ClassExtend extends CanExtend{
+object NetClass {
+
   /**
-   * 继承：
-   * 重写：重写一个非抽象方法必须使用override，字段也是一样
+   * 嵌套类：
+   *
+   *
    *
    */
+  class B{
+    class BB{
 
-  //TODO:重写错了待修改
-  //override var VarParm="666"
-  //override val ValParm="888"
-  //重写抽象类的未赋值方法
-  val AbsVal=123
+    }
 
-  //调用父类方法用super
-  override def Method1={super.Method1();println("a")}
+  }
+  class C{
+    class BB{
+
+    }
+  }
+  val value=100
+  class D{
+    //引用外class的属性
+    outer=>class DD{
+      println(outer.v)
+    }
+    private val v=100
+  }
 
 
-}
+  def main(args: Array[String]) {
+    //是两个不同的类
+    val b=new B
+    val b2=new B
 
-//不可继承的类
-final class UnExtend{
+    //投影
+    //val b3=new B#BB
 
-}
+  }
 
-class CanExtend{
-  //错了，待修改
-  //var VarParm:String="变量参数"
-  //val ValParm:String="常量参数"
 
-  //抽象类可以未定义的变量用于重写
-  //val AbsVal:String
 
-  def Method1()={}
 
 }

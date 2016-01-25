@@ -1,4 +1,4 @@
-package ClassExtend
+package ClassOpt
 
 /*
                    _ooOoo_
@@ -21,25 +21,28 @@ package ClassExtend
                    `=---='
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
          佛祖保佑       永无BUG
-         Create by Caesar,2016/1/14
+         Create by Caesar,2016/1/10
 */
-class OverrideField {
-  val val1="val1"
-  var var1="var1"
-  def functionNoParm={}
-  def functionParm(name:String)={}
-}
+//主构造器,赋值默认参数值，如果不带val，var 的参数被使用，那么将升级为字段
+class AuxiConst(private val m:Int=0) {
+  //主构造器执行所有的语句
+  println("执行构造器了啊！！！")
+  def desc="aaaaaa"
+  println(desc)
 
-class MyOverrideField extends OverrideField{
-  //def 只能重写另一个def
-  override def functionParm(name:String)={
-    printf("重写")
+
+  //var name=_
+
+  def this(m:Int,name:String)={
+    //调用主构造器
+    this(1)
+    println(name)
   }
-  //val重写另一个val或不带参数的def
-  //override val val1="new val1"
-  //override val functionNoParm=""
+  def this(m:Int,name:String,age:Int)={
+    //调用第一个辅助构造器
+    this(m,name)
+    println(name,age)
+  }
 
-  //var重写var
-  //override var var1="bbb"
 
 }

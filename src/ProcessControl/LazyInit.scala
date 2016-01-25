@@ -47,7 +47,7 @@ object LazyInit {
     def abc(x:Double)= {
       if (x >= 0) {
         math.sqrt(x)
-      } else throw IllegalArgumentException
+      } else throw new IllegalArgumentException()
     }
 
     try{

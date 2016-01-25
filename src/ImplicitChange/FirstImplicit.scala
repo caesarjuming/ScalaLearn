@@ -1,4 +1,4 @@
-package ClassExtend
+package ImplicitChange
 
 /*
                    _ooOoo_
@@ -21,25 +21,18 @@ package ClassExtend
                    `=---='
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
          佛祖保佑       永无BUG
-         Create by Caesar,2016/1/14
+         Create by Caesar,2016/1/18
 */
-class OverrideField {
-  val val1="val1"
-  var var1="var1"
-  def functionNoParm={}
-  def functionParm(name:String)={}
-}
+object FirstImplicit {
+  def main(args: Array[String]) {
+    /**
+     * Scala会考虑如下隐式转换函数
+     * 1，位于源目标或目标类型伴生对象中的隐式函数
+     * 2，位于当前作用域可以以单个标识符指代的隐式函数
+     *
+     *
+     *
+     */
 
-class MyOverrideField extends OverrideField{
-  //def 只能重写另一个def
-  override def functionParm(name:String)={
-    printf("重写")
   }
-  //val重写另一个val或不带参数的def
-  //override val val1="new val1"
-  //override val functionNoParm=""
-
-  //var重写var
-  //override var var1="bbb"
-
 }

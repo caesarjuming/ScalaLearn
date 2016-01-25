@@ -1,4 +1,4 @@
-package ClassExtend
+package ArrayOpt
 
 /*
                    _ooOoo_
@@ -21,40 +21,24 @@ package ClassExtend
                    `=---='
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
          佛祖保佑       永无BUG
-         Create by Caesar,2016/1/14
+         Create by Caesar,2016/1/9
 */
-class ClassExtend extends CanExtend{
+object MatrixArray {
   /**
-   * 继承：
-   * 重写：重写一个非抽象方法必须使用override，字段也是一样
+   * 多维数组：
+   *
+   *
    *
    */
-
-  //TODO:重写错了待修改
-  //override var VarParm="666"
-  //override val ValParm="888"
-  //重写抽象类的未赋值方法
-  val AbsVal=123
-
-  //调用父类方法用super
-  override def Method1={super.Method1();println("a")}
+  def main(args: Array[String]) {
+    val maA=Array.ofDim[Int](2,2)
+    maA(0)(0)=99
+    //不规则数组
+    val maB=new Array[Array[Int]](10)
+    maB(0)=new Array[Int](8)
 
 
-}
+  }
 
-//不可继承的类
-final class UnExtend{
-
-}
-
-class CanExtend{
-  //错了，待修改
-  //var VarParm:String="变量参数"
-  //val ValParm:String="常量参数"
-
-  //抽象类可以未定义的变量用于重写
-  //val AbsVal:String
-
-  def Method1()={}
 
 }
