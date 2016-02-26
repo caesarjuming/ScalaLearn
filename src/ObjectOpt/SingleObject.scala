@@ -1,6 +1,6 @@
 package ObjectOpt
 
-import com.Mytrait.Logged
+import com.mytrait.Logged
 
 /*
                    _ooOoo_
