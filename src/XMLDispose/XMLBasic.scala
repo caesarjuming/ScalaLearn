@@ -55,7 +55,23 @@ object XMLBasic{
       println(k,v)
     }
 
-    val xml6 = <ul>{for (1.t)}</ul>
+    val xml6 = <ul>{for(i<-1 to 10)yield <li>{i}</li>}</ul>
+    println(xml6)
+
+    val xml7 = <ul>{{"aa"}}</ul>
+    val xml8 = <ul>{ {"aa"} }</ul>
+    println(xml7)
+    println(xml8)
+
+    val fileName:String ="file"
+
+    // 此方法必须在xml9之前定义
+    def makeFile(filename:String):String={
+      "myFile"
+    }
+    val xml9 = <a href={makeFile(fileName)}></a>
+
+    println(xml9)
 
   }
 }
